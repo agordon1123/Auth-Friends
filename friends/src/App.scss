@@ -2,15 +2,65 @@
   text-align: center;
   margin: 0 auto;
   max-width: 800px;
+  height: 100vh;
+  background-color: #1DA1F2;
   .header {
-    display: flex;
-    justify-content: flex-end;
+    .logo {
+      height: 50px;
+      margin: 20px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
     .links {
       display: inline-flex;
-      .link {
-        list-style-type: none;
-        margin: 0 30px;
+      justify-content: space-between;
+      width: 95%;
+      ul {
+        .link {
+          display: inline-flex;
+          list-style-type: none;
+          margin: 20px;
+          a {
+            text-decoration: none;
+            color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+            padding: 8px;
+            &:hover {
+              background-color: white;
+              color: #1DA1F2;
+            }
+          }
+        }
       }
-    }  
+    }
+    .landing {
+      font-size: 1.5em;
+      margin: 80px auto;
+      h2 {
+        color: white;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 8px;
+        &:hover {
+          background-color: white;
+          color: lightgreen;
+        }
+      }
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      margin: 100px auto;
+      max-width: 150px;
+      .input {
+        margin: 10px;
+      }
+    }
   }
 }
