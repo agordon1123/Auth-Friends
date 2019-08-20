@@ -3,7 +3,10 @@ import { withFormik, Form, Field } from 'formik';
 import Axios from 'axios';
 
 const Login = () => {
-    const [credentials, setCredentials] = useState({})
+    const [credentials, setCredentials] = useState({
+        username: '',
+        password: ''
+    })
     console.log(credentials)
 
     return (
@@ -38,7 +41,7 @@ const LoginForm = withFormik({
 
     handleSubmit(values) {
         console.log(values)
-        Axios.post('')
+        Axios.post('http://localhost:5000/api/login', values)
             .then(res => console.log(res))
             .catch(err => console.log(err))
     }
