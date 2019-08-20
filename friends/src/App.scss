@@ -3,7 +3,6 @@
   margin: 0 auto;
   max-width: 800px;
   height: 100vh;
-  background-color: #1DA1F2;
   .header {
     .logo {
       height: 50px;
@@ -57,9 +56,21 @@
       display: flex;
       flex-direction: column;
       margin: 100px auto;
-      max-width: 150px;
+      max-width: 180px;
       .input {
         margin: 10px;
+        height: 26px;
+        width: 150px;
+        border-radius: 5px;
+      }
+      .button {
+        height: 26px;
+        width: 50px;
+        border-radius: 5px;
+        font-size: .8em;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }

@@ -11,7 +11,7 @@ const Login = () => {
 
     return (
         <div className='form'>
-            <h2>Account Login</h2>
+            <h2>Account<br />Login</h2>
             <Form>
                 <Field
                     className='input'
@@ -25,7 +25,7 @@ const Login = () => {
                     name='password'
                     placeholder='******'
                 />
-                <button type='submit'>Login</button>
+                <button className='button' type='submit'>Login</button>
             </Form>
         </div>
     )
@@ -41,9 +41,12 @@ const LoginForm = withFormik({
 
     handleSubmit(values) {
         console.log(values)
-        Axios.post('http://localhost:5000/api/login', values)
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+        Axios
+            .post('http://localhost:5000/api/login', values)
+            .then(res => {
+                localStorage.setItem('token', res.data.payload);
+            })
+            .catch(err => console.log(err));
     }
 })(Login);
 

@@ -7,6 +7,7 @@ import './App.scss';
 import Profile from './components/Profile';
 import LoginForm from './components/Login';
 import Landing from './components/Landing';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         </div>
         <Route exact path='/' component={Landing} />
         <Route exact path='/login' component={LoginForm} />
-        <Route exact path='/profile' component={Profile} />
+        <PrivateRoute exact path='/profile' component={Profile} />
       </header>
     </div>
   );
