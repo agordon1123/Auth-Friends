@@ -1,10 +1,12 @@
 import React from 'react';
 
 const Friend = props => {
-    console.log(props)
+    console.log(props.friend.name)
     return (
-        <div>
-            <h1>Hello from Friend</h1>
+        <div className='friend'>
+            <p>Name: {props.friend.name}</p>
+            <p>Age: {props.friend.age}</p>
+            <p>Email: {props.friend.email}</p>
         </div>
     )
 }

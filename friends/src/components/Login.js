@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { withFormik, Form, Field } from 'formik';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 import Axios from 'axios';
 
 const Login = props => {
@@ -42,16 +42,17 @@ const LoginForm = withFormik({
         }
     },
 
-    handleSubmit(values) {
+    handleSubmit(values, { props }) {
         console.log(values)
+        console.log(props)
         Axios
             .post('http://localhost:5000/api/login', values)
             .then(res => {
                 localStorage.setItem('token', res.data.payload);
-                // console.log(props)
+                setTimeout(props.history.push('/profile'), 1000)
             })
             .catch(err => console.log(err));
     }
 })(Login);
 
-export default LoginForm;
+export default withRouter(LoginForm);

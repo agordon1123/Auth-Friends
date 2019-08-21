@@ -6,7 +6,7 @@
   .header {
     .logo {
       height: 50px;
-      margin: 20px;
+      margin: 28px;
       &:hover {
         cursor: pointer;
       }
@@ -57,6 +57,41 @@
       flex-direction: column;
       margin: 100px auto;
       max-width: 180px;
+      .input {
+        margin: 10px;
+        height: 26px;
+        width: 150px;
+        border-radius: 5px;
+      }
+      .button {
+        height: 26px;
+        width: 50px;
+        border-radius: 5px;
+        font-size: .8em;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .profile-container {
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 40px;
+    .friends-list {
+      width: 45%;
+      .friend {
+        text-align: left;
+        border-right: 1px solid white;
+        border-bottom: 1px solid white;
+      }
+    }
+    .friend-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 100px;
       .input {
         margin: 10px;
         height: 26px;

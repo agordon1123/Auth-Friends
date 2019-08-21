@@ -8,8 +8,6 @@ import Profile from './components/Profile';
 import LoginForm from './components/Login';
 import Landing from './components/Landing';
 import PrivateRoute from './components/PrivateRoute';
-console.log(Redirect)
-
 
 const App = props => {
   console.log(props)

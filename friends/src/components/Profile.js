@@ -13,7 +13,7 @@ const Profile = props => {
     }, [])
 
     return (
-        <div>
+        <div className='profile'>
             <h1>Hello Alex</h1>
             <div className='profile-container'>
                 <FriendsList friends={props} />
