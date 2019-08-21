@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Redirect, withRouter } from 'react-router-dom';
 
 import './App.scss';
 
@@ -8,19 +8,30 @@ import Profile from './components/Profile';
 import LoginForm from './components/Login';
 import Landing from './components/Landing';
 import PrivateRoute from './components/PrivateRoute';
+console.log(Redirect)
 
-function App() {
+
+const App = props => {
+  console.log(props)
+
+  const goHome = () => {
+    props.history.push('/')
+  };
+
   return (
     <div className="App">
       <header className='header'>
         <div className='links'>
-          <img className='logo' src="https://img.icons8.com/ios/50/000000/origami.png" />
+          <img className='logo' onClick={goHome} src="https://img.icons8.com/ios/50/000000/origami.png" />
           <ul>
             <li className='link'>
               <Link to='/login'>Login</Link>
             </li>
             <li className='link'>
               <Link to='/profile'>Profile</Link>
+            </li>
+            <li className='link'>
+              <Link to='/'>Logout</Link>
             </li>
           </ul>
         </div>
@@ -32,4 +43,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);

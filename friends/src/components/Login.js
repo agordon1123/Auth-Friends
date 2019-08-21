@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { withFormik, Form, Field } from 'formik';
+import { Redirect } from 'react-router-dom';
 import Axios from 'axios';
 
 const Login = () => {
-    const [credentials, setCredentials] = useState({
-        username: '',
-        password: ''
-    })
-    console.log(credentials)
 
     return (
         <div className='form'>
             <h2>Account<br />Login</h2>
             <Form>
+                {localStorage.getItem('token') ? 
+                <Redirect to='/profile' />
+                : (
+                    <>
                 <Field
                     className='input'
                     type='text'
@@ -26,6 +26,8 @@ const Login = () => {
                     placeholder='******'
                 />
                 <button className='button' type='submit'>Login</button>
+                </>
+                )}
             </Form>
         </div>
     )
