@@ -35,7 +35,7 @@ const LoginForm = withFormik({
     mapPropsToValues({ username, password }) {
         return {
             username: username || '',
-            password: password || ''    
+            password: password || ''
         }
     },
 

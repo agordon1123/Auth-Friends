@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { axiosWithAuth } from '../utilities/axiosWithAuth';
+// import { axiosWithAuth } from '../utilities/axiosWithAuth';
+import FriendsList from './FriendsList';
+import { connect } from 'react-redux';
+import { getFriends } from '../actions/getFriends';
 
-const Profile = () => {
-    const [friends, setFriends] = useState({
-        friends: []
-    })
-    console.log(friends);
+const Profile = props => {
+    console.log(props);
 
     useEffect(() => {
-        axiosWithAuth()
-            .get('http://localhost:5000/api/friends')
-            .then(res => {
-                setFriends({ friends: res.data })
-            })
-            .catch(err => console.log(err))
+        props.getFriends();
     }, [])
 
     return (
         <div>
-            <h1>Hello from Profile</h1>
+            <h1>Hello Alex</h1>
+            <FriendsList friends={props} />
         </div>
     )
 };
 
-export default Profile;
+const mapPropsToState = state => {
+    console.log(state)
+    return {
+        error: state.error,
+        isLoading: state.isLoading,
+        friends: state.friends
+    }
+}
+
+export default connect(mapPropsToState, { getFriends })(Profile);
