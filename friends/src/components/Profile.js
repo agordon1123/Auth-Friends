@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-// import { axiosWithAuth } from '../utilities/axiosWithAuth';
-import FriendsList from './FriendsList';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getFriends } from '../actions/getFriends';
+import Loader from 'react-loader-spinner';
+import FriendsList from './FriendsList';
 import FriendForm from './FriendForm';
+import { getFriends } from '../actions/getFriends';
 
 const Profile = props => {
     console.log(props);
@@ -16,8 +16,18 @@ const Profile = props => {
         <div className='profile'>
             <h1>Hello Alex</h1>
             <div className='profile-container'>
-                <FriendsList friends={props} />
-                <FriendForm />
+
+            {props.isLoading ? (
+            <Loader
+                type="Puff"
+                color="#00BFFF"
+                /> 
+            ) : (
+                <> 
+                    <FriendsList friends={props} />
+                    <FriendForm />
+                </> 
+            )} 
             </div>
         </div>
     )

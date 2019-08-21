@@ -15,11 +15,14 @@ export const friendsReducer = (state = initialState, action) => {
         case FETCH_FRIENDS_START:
             return {
                 ...state,
+                error: '',
                 isLoading: true
             };
         case FETCH_FRIENDS_SUCCESS:
             return {
                 ...state,
+                error: '',
+                isLoading: false,
                 friends: action.payload
             };
         case ERROR:

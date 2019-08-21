@@ -43,7 +43,7 @@ const FriendForm = withFormik({
         }
     },
 
-    handleSubmit(values, { props, setSubmitting }) {
+    handleSubmit(values, { props }) {
         console.log(props)
         console.log(values)
         axiosWithAuth()

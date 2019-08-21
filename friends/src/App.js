@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link, Redirect, withRouter } from 'react-router-dom';
+import { Route, Link, withRouter } from 'react-router-dom';
 
 import './App.scss';
 
@@ -20,7 +20,7 @@ const App = props => {
     <div className="App">
       <header className='header'>
         <div className='links'>
-          <img className='logo' onClick={goHome} src="https://img.icons8.com/ios/50/000000/origami.png" />
+          <img className='logo' alt='paper crane icon' onClick={goHome} src="https://img.icons8.com/ios/50/000000/origami.png" />
           <ul>
             <li className='link'>
               <Link to='/login'>Login</Link>
