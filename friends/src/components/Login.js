@@ -3,7 +3,8 @@ import { withFormik, Form, Field } from 'formik';
 import { Redirect } from 'react-router-dom';
 import Axios from 'axios';
 
-const Login = () => {
+const Login = props => {
+    console.log(props);
 
     return (
         <div className='form'>
@@ -47,6 +48,7 @@ const LoginForm = withFormik({
             .post('http://localhost:5000/api/login', values)
             .then(res => {
                 localStorage.setItem('token', res.data.payload);
+                // console.log(props)
             })
             .catch(err => console.log(err));
     }

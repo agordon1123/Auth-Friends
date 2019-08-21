@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import FriendsList from './FriendsList';
 import { connect } from 'react-redux';
 import { getFriends } from '../actions/getFriends';
+import FriendForm from './FriendForm';
 
 const Profile = props => {
     console.log(props);
@@ -14,7 +15,10 @@ const Profile = props => {
     return (
         <div>
             <h1>Hello Alex</h1>
-            <FriendsList friends={props} />
+            <div className='profile-container'>
+                <FriendsList friends={props} />
+                <FriendForm />
+            </div>
         </div>
     )
 };
