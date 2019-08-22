@@ -1,0 +1,111 @@
+.App {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  height: 100vh;
+  .header {
+    .logo {
+      height: 50px;
+      margin: 28px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .links {
+      display: inline-flex;
+      justify-content: space-between;
+      width: 95%;
+      ul {
+        .link {
+          display: inline-flex;
+          list-style-type: none;
+          margin: 20px;
+          a {
+            text-decoration: none;
+            color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+            padding: 8px;
+            &:hover {
+              background-color: white;
+              color: #1DA1F2;
+            }
+          }
+        }
+      }
+    }
+    .landing {
+      font-size: 1.5em;
+      margin: 80px auto;
+      h2 {
+        color: white;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 8px;
+        &:hover {
+          background-color: #1df26f;
+          color: black; 
+        }
+      }
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      margin: 100px auto;
+      max-width: 180px;
+      .input {
+        margin: 10px;
+        height: 26px;
+        width: 150px;
+        border-radius: 5px;
+      }
+      .button {
+        height: 26px;
+        width: 50px;
+        border-radius: 5px;
+        font-size: .8em;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .profile-container {
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 40px;
+    .friends-list {
+      width: 45%;
+      .friend {
+        text-align: left;
+        border-bottom: 1px solid white;
+      }
+    }
+    .friend-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 100px;
+      .input {
+        margin: 10px;
+        height: 26px;
+        width: 150px;
+        border-radius: 5px;
+      }
+      .button {
+        height: 26px;
+        width: 50px;
+        border-radius: 5px;
+        font-size: .8em;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
